@@ -14,7 +14,7 @@ export default class Video {
 
         //console.log(type);
         const myVideo = myApp.innerHTML + `<div><video width=${this.width} height=${this.height} controls >        
-        <source src=${this.src} type="video/${type}">
+        <source src=${this.src} type="video/${type} autoplay playsinline loop">
         Your browser does not support the video tag.
         </video> </div>`;
 
