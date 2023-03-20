@@ -1,5 +1,3 @@
-
-////exportamos
 export default class Button {
     constructor(parentID, text) {
         this.parentID = parentID;

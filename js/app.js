@@ -1,16 +1,20 @@
-//importamos///
+///////////////////////////////
+/// Importar funciones o clases
 import Button from "./components/button.js";
 import Input from "./components/input.js";
+import Video from "./components/video.js";
 
-
-///datos/////
+/////////////////////////////////////////////
+//// datos
 let mySuperArrayofStrings = ["Login", "Signup", "Reset", "Cancel"];
 let inputArray = ["Username", "Surname", "E-mail", "Password"];
-let inputArrayFiltered = inputArray.filter( element => element=="Username");
+let inputArrayFiltered = inputArray.filter( element => element=="Password");
+///////////////////////////////////////////
 
 
-
-///funciones////
+//////////////////////////////////////////////
+// Funciones
+//////////////////////////////////////////
 function RenderButton(text) {
     let myButton = new Button("app", text);
     myButton.render();
@@ -35,41 +39,17 @@ function RenderInput(type) {
     let myInput = new Input("app", input_type);
     myInput.render();
 }
-
-
 ///////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+// Logica de App
 mySuperArrayofStrings.forEach(element => {
     RenderButton(element)
 });
 
-// Defino una funcion con el nombre que quiero..
-function MySuperFuncion(x, y, z) {
-
-}
-
-MySuperFuncion();// Invocamos...
-
-// Puede asignar a una constante una funcion que NO tiene nombre
-const MySuperFuncionDefinida = function () {
-
-}
-
-MySuperFuncionDefinida();
-
-// definir funciones asignando otras..
-const MySegundaSuperFuncion = MySuperFuncion;
-
-/// Otro tipo de funcion anonima
-const MySuperFuncionSiNombre = (x) => {
-    return x + 1
-}
-
-
-const MySuperArrowFunction = x => x + 1
-
-
-
-
 inputArrayFiltered.forEach(function (element) {
     RenderInput(element);
 });
+
+let myVideo= new Video("app","https://liendo.s3.sa-east-1.amazonaws.com/Pel%C3%ADculas+y+TV+2022-07-19+23-13-37_Trim.mp4",400,300)
+myVideo.render()

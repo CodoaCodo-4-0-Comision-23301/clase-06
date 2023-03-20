@@ -1,5 +1,3 @@
-
-1//exportamos
 export default class Input {
     constructor(parentID, type) {
         this.parentID = parentID;
