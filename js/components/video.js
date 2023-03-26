@@ -1,23 +1,24 @@
 export default class Video {
-    constructor(parentID, src, width, height) {
+    constructor(parentID, src, width, height, type) {
         this.parentID = parentID;
         this.src = src;
         this.width = width;
         this.height = height;
-        
+        this.type = type;
     }
 
     render() {
-        let myApp = document.getElementById(this.parentID);
+        let myParent = document.getElementById(this.parentID);
         let pos=this.src.lastIndexOf(".");
         let type=this.src.substr(pos+1);
 
-        //console.log(type);
-        const myVideo = myApp.innerHTML + `<div><video width=${this.width} height=${this.height} controls >        
+        //
+        const videoTag = `<div><video controls width=${this.width} height=${this.height}>        
         <source src=${this.src} type="video/${type}">
-        Your browser does not support the video tag.
-        </video> </div>`;
+        
+        </video></div>`;
+        const myVideo = myParent.innerHTML + videoTag
 
-        myApp.innerHTML = myVideo; 
+        myParent.innerHTML = myVideo; 
     }
 }
