@@ -51,5 +51,5 @@ inputArrayFiltered.forEach(function (element) {
     RenderInput(element);
 });
 
-let myVideo= new Video("app","https://liendo.s3.sa-east-1.amazonaws.com/Pel%C3%ADculas+y+TV+2022-07-19+23-13-37_Trim.mp4",400,300, "mp4")
+let myVideo= new Video("videoID","https://liendo.s3.sa-east-1.amazonaws.com/Pel%C3%ADculas+y+TV+2022-07-19+23-13-37_Trim.mp4",400,300, "video/mp4")
 myVideo.render()

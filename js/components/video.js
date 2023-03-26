@@ -1,7 +1,7 @@
 export default class Video {
-    constructor(parentID, src, width, height, type) {
+    constructor(parentID, url, width, height, type) {
         this.parentID = parentID;
-        this.src = src;
+        this.url = url;
         this.width = width;
         this.height = height;
         this.type = type;
@@ -9,14 +9,8 @@ export default class Video {
 
     render() {
         let myParent = document.getElementById(this.parentID);
-        let pos=this.src.lastIndexOf(".");
-        let type=this.src.substr(pos+1);
-
-        //
         const videoTag = `<div><video controls width=${this.width} height=${this.height}>        
-        <source src=${this.src} type="video/${type}">
-        
-        </video></div>`;
+        <source src=${this.url} type="${this.type}"></video></div>`;
         const myVideo = myParent.innerHTML + videoTag
 
         myParent.innerHTML = myVideo; 
